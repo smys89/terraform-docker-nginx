@@ -1,14 +1,9 @@
-# Start a container
+# Start an nginx container
 resource "docker_container" "nginx" {
-  name  = "nginx"
-  image = docker_image.nginx.image_id
+  name  = var.nginx_pod_name
+  image = var.nginx_image
   ports {
-    internal = var.docker_ports.internal
-    external = var.docker_ports.external
+    internal = var.docker_ports[0].internal
+    external = var.docker_ports[0].external
   }
-}
-
-# Find the latest NGINX image.
-resource "docker_image" "nginx" {
-  name = var.nginx_image
 }
