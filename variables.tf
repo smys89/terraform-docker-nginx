@@ -1,5 +1,5 @@
 variable "docker_ports" {
-  description = "Port Number used by NGINX pod"
+  description = "Ports used by nginx pod"
   type        = list(object({
     internal  = number
     external  = number
@@ -13,7 +13,7 @@ variable "docker_ports" {
 }
 
 variable "nginx_image" {
-  description = "NGINX image name and version"
+  description = "Docker nginx image name and version"
   type        = string
   default     = "nginx:latest"
 }
