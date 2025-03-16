@@ -12,11 +12,3 @@ resource "docker_container" "nginx" {
 resource "docker_image" "nginx" {
   name = var.nginx_image
 }
-
-variable "port_no" {
-    type = string
-}
-
-variable "nginx_image" {
-    type = string
-}
