@@ -3,8 +3,8 @@ resource "docker_container" "nginx" {
   name  = "nginx"
   image = docker_image.nginx.image_id
   ports {
-    internal = var.port_no
-    external = var.port_no
+    internal = var.docker_ports.internal
+    external = var.docker_ports.external
   }
 }
 

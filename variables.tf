@@ -1,7 +1,15 @@
-variable "port_no" {
+variable "docker_ports" {
   description = "Port Number used by NGINX pod"
-  type        = string
-  default     = "80"
+  type        = list(object({
+    internal  = number
+    external  = number
+  }))
+  default = [
+    {
+      internal = 80
+      external = 8080
+    }
+  ]
 }
 
 variable "nginx_image" {
